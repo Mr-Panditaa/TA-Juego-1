@@ -1,0 +1,14 @@
+CollisionShape3D
+StaticBody3D
+ColorRect
+Button
+Container
+Label
+VBoxContainer
+Control
+CanvasLayer
+Area3D
+MeshInstance3D
+Camera3D
+Node3D
+CharacterBody3D
