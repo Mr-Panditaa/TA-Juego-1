@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://17x577gblp52"]
+
+[ext_resource type="Script" uid="uid://do42p1mgoimiq" path="res://ProyectoFinal/scripts/Player.gd" id="1_vthp3"]
+[ext_resource type="Script" uid="uid://dcqnm5q8v66d4" path="res://ProyectoFinal/scripts/camera.gd" id="2_n1qr8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n1qr8"]
+albedo_color = Color(1, 1, 0.37254903, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_npo1j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oc1ek"]
+albedo_color = Color(0.05882353, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ytcn7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_md5ix"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3s7nu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_msmmw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n1qr8"]
+font_size = 56
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1665366304 groups=["player"]]
+script = ExtResource("1_vthp3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1512531430]
+material_override = SubResource("StandardMaterial3D_n1qr8")
+mesh = SubResource("CapsuleMesh_npo1j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=668437234]
+transform = Transform3D(-1.5517543e-08, 0, 0.885, 0, 0.365, 0, -0.355, 0, -3.868458e-08, 0.0309937, 0.37291884, -0.34213197)
+material_override = SubResource("StandardMaterial3D_oc1ek")
+mesh = SubResource("BoxMesh_ytcn7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1219194262]
+transform = Transform3D(1.015, 0, 0, 0, 0.64, 0, 0, 0, 1, 0, -0.36, 0)
+material_override = SubResource("StandardMaterial3D_md5ix")
+mesh = SubResource("CapsuleMesh_3s7nu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1793423695]
+shape = SubResource("CapsuleShape3D_msmmw")
+
+[node name="pivot" type="Node3D" parent="." unique_id=102303348]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.98606014, 0.16639014, 0, -0.16639015, 0.98606, 0.08614135, 2.5839038, 3.7120318)
+script = ExtResource("2_n1qr8")
+
+[node name="Camera3D" type="Camera3D" parent="pivot" unique_id=256217768]
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1540853321]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=559163557]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=476376728]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Coins"
+label_settings = SubResource("LabelSettings_n1qr8")
+
+[node name="MensajeLabel" type="Label" parent="CanvasLayer/Control" unique_id=73885154]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -69.5
+offset_top = -50.0
+offset_right = 69.5
+grow_horizontal = 2
+grow_vertical = 0

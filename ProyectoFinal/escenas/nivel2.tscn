@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dj3y3wx2mdnvu"]
+
+[ext_resource type="ArrayMesh" uid="uid://cvi6vndgx5b6b" path="res://assets/Models/OBJ format/block-grass-large.obj" id="1_vv6r6"]
+[ext_resource type="PackedScene" uid="uid://17x577gblp52" path="res://ProyectoFinal/escenas/Player.tscn" id="2_qvo0h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_10nge"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ep5x6"]
+sky_material = SubResource("ProceduralSkyMaterial_10nge")
+
+[sub_resource type="Environment" id="Environment_i0c5q"]
+background_mode = 2
+sky = SubResource("Sky_ep5x6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mr872"]
+points = PackedVector3Array(-0.9914517, 5.551115e-17, -0.73557156, 1.018175, 0.8616238, 0.79539657, 0.92811626, 0.89582634, -0.9600868, -0.98816663, 0.98988116, 0.7650878, 0.8953831, 5.551115e-17, 0.9275295, 0.92744154, 5.551115e-17, -0.8954697, -0.92288506, 0.9891448, -0.9230785, -0.89527667, 5.551115e-17, 0.9275295, 0.76502556, 0.98989314, 0.98818743, -0.73538554, 0, -0.99144864, -0.76909584, 0.8963961, 1.0257118, 0.98813415, 0.9899118, -0.76513517, 0.7357069, 0.92759305, -1.0238074, 0.991358, -5.551115e-17, -0.73557156, 0.7354921, 0, 0.99144864, -1.0256553, 0.89637345, -0.76924026, -0.9914517, -1.110223e-16, 0.73557156, -0.76909274, 0.8963945, -1.0257076, 0.7354921, 0, -0.99144864, 0.991358, 5.551115e-17, 0.73557156, -0.73538554, 0, 0.99144864, 1.025625, 0.8963983, -0.76928806, -1.0256553, 0.89637345, 0.76924026, 0.76917714, 0.8963827, 1.0256776, 0.98813415, 0.9899118, 0.76513517, -0.9228851, 0.9891448, 0.9230785, -0.89527667, 5.551115e-17, -0.9275295, 0.76502806, 0.98989475, -0.9881907, 0.9600266, 0.8958385, 0.92823255, -0.9600609, 0.8958137, 0.928175, -0.9600609, 0.8958137, -0.928175, -0.7649419, 0.98990744, -0.9882161)
+
+[node name="Node3D" type="Node3D" unique_id=1361357924]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1586526593]
+environment = SubResource("Environment_i0c5q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=773279903]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="BlockGrassLarge" type="MeshInstance3D" parent="." unique_id=1571225747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.545, 1, 0, 1)
+mesh = ExtResource("1_vv6r6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BlockGrassLarge" unique_id=1146430184]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlockGrassLarge/StaticBody3D" unique_id=1153261318]
+shape = SubResource("ConvexPolygonShape3D_mr872")
+
+[node name="CharacterBody3D" parent="." unique_id=1665366304 instance=ExtResource("2_qvo0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0816815, 2.2293289, 0.6925621)

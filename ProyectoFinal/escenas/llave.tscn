@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ibx6ba0wkh1d"]
+
+[ext_resource type="ArrayMesh" uid="uid://dn2u28f10de05" path="res://assets/Models/OBJ format/key.obj" id="1_e7mlo"]
+[ext_resource type="Script" uid="uid://4klc3m2d620o" path="res://ProyectoFinal/scripts/llave.gd" id="1_vfxlc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vfxlc"]
+points = PackedVector3Array(-0.17580414, 0.10227453, -0.0339, -0.06320055, 0.21112947, 0.03203415, 0.1773946, 0.1407, 0.032311793, -0.095656686, 0.01005218, 0.0339, 0.17774448, 0.07120907, -0.036923036, -0.08133264, 0.21337873, -0.0339, 0.17192166, 0.002184505, 0.016999999, -0.0757632, 0.007792697, -0.0339, -0.16462469, 0.16514976, 0.0339, 0.1773946, 0.1407, -0.033448298, -0.15235046, 0.033404335, 0.033732094, 0.17774448, 0.065151125, 0.035786532, 0.16086707, 0.009236763, -0.016999999, -0.14799179, 0.18556747, -0.0339, -0.14799179, 0.035583835, -0.0339, -0.08417401, 0.21688363, 0.0339, -0.18186669, 0.10199115, 0.0339, -0.07732003, 0.00573477, 0.0334308, -0.15310603, 0.1881241, 0.0339, -0.17580414, 0.118896894, -0.0339, -0.06320055, 0.21112947, -0.033170655, -0.18186669, 0.11918028, 0.0339, -0.15886535, 0.044513684, 0.0339, -0.09800612, 0.20780441, -0.0339, -0.15913066, 0.16335064, -0.0339, -0.14158224, 0.19384384, 0.03389013, -0.15356122, 0.04669224, -0.0339, -0.17610736, 0.13643184, 0.0339, -0.0924367, 0.013367021, -0.0339, -0.13688774, 0.19112167, -0.0339, -0.17023471, 0.13557963, -0.0339, -0.1009408, 0.21065728, 0.033741616)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_288yk"]
+size = Vector3(0.4025879, 0.25766373, 0.1541748)
+
+[node name="Area3D" type="Area3D" unique_id=1044654817]
+script = ExtResource("1_vfxlc")
+
+[node name="Key" type="MeshInstance3D" parent="." unique_id=810628148]
+mesh = ExtResource("1_e7mlo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Key" unique_id=789739463]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Key/StaticBody3D" unique_id=865970178]
+shape = SubResource("ConvexPolygonShape3D_vfxlc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=91938629]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0064697266, 0.10807228, 0.008850098)
+shape = SubResource("BoxShape3D_288yk")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://8dehjsktwgg4"]
+
+[ext_resource type="Script" uid="uid://cjgthdymkgqnv" path="res://ProyectoFinal/scripts/escalera.gd" id="1_pbuv1"]
+[ext_resource type="ArrayMesh" uid="uid://sjeg8c3le1xw" path="res://assets/Models/OBJ format/ladder-long.obj" id="1_tm70q"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pbuv1"]
+points = PackedVector3Array(0.2738095, 2.0154753, 0.061086252, -0.26587301, -0.015475273, -0.06584816, -0.26587301, -0.015475273, 0.061086252, -0.26587301, 2.0154753, -0.06584816, 0.2738095, -0.015475273, -0.06584816, 0.2738095, -0.015475273, 0.061086252, -0.26587301, 2.0154753, 0.061086252, 0.2738095, 2.0154753, -0.06584816)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o6u1m"]
+size = Vector3(0.6133423, 2.0772781, 0.18920898)
+
+[node name="Area3D" type="Area3D" unique_id=418946465]
+script = ExtResource("1_pbuv1")
+
+[node name="LadderLong" type="MeshInstance3D" parent="." unique_id=1934233270]
+mesh = ExtResource("1_tm70q")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LadderLong" unique_id=1581817802]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LadderLong/StaticBody3D" unique_id=1154040975]
+shape = SubResource("ConvexPolygonShape3D_pbuv1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=178709451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0032653809, 1.0040627, 0.00036621094)
+shape = SubResource("BoxShape3D_o6u1m")

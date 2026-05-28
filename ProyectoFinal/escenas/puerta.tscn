@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ccoug50r6gj4w"]
+
+[ext_resource type="ArrayMesh" uid="uid://catiwhqf1d34j" path="res://assets/Models/OBJ format/door-rotate-large.obj" id="1_7obvo"]
+[ext_resource type="Script" uid="uid://bncmhcb38uuqa" path="res://ProyectoFinal/scripts/puerta.gd" id="1_v4rw7"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v4rw7"]
+points = PackedVector3Array(-0.49297374, 0.0072192876, -0.10702624, 0.060611553, 0.9850824, 0.1068995, 0.09037542, 0.9666911, 0.12125098, 0.43728983, 0.017649198, -0.14999999, 0.4326867, 0.02272667, 0.14999999, 0.2250313, 0.8900155, -0.14925069, -0.43259323, 0.5894362, 0.14999999, -0.33115402, 0.80100733, -0.14976302, -0.43259323, 0.02272667, 0.14999999, 0.46735427, 0.65071774, 0.10628604, 0.48637974, 0.56073797, -0.10558404, -0.22377446, 0.8878372, 0.14999999, -0.4371954, 0.017649198, -0.14999999, -0.46857834, 0.6511125, -0.1050046, 0.28341025, 0.84307235, 0.14999999, -0.1511597, 0.9685412, -0.10501693, 0.49169597, 0.008496569, 0.10830402, -0.49169597, 0.008496569, 0.10830402, -0.37546742, 0.8153685, 0.10589395, 0.25632694, 0.9221529, -0.10475933, -0.48510808, 0.5605792, 0.106863566, 0.49297374, 0.0072192876, -0.10702624, 0.3900568, 0.72496706, -0.1492372, 0.3154436, 0.8754098, 0.105898395, 0.4222083, 0.75626016, -0.104752496, -0.15076457, 0.96731645, 0.106298156, -0.33282226, 0.86308527, -0.10510917, 0.060770158, 0.9863517, -0.10561958, 0.4326867, 0.5894362, 0.14999999, -0.43606725, 0.6052273, -0.14961089, -0.10524655, 0.9360706, -0.14960901, -0.48637974, 0.56073797, -0.10558404)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7cpgo"]
+size = Vector3(1, 1.0861511, 0.41685486)
+
+[node name="Area3D" type="Area3D" unique_id=301203940]
+script = ExtResource("1_v4rw7")
+
+[node name="DoorRotateLarge" type="MeshInstance3D" parent="." unique_id=1011844776]
+mesh = ExtResource("1_7obvo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorRotateLarge" unique_id=1803158687]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorRotateLarge/StaticBody3D" unique_id=948558297]
+shape = SubResource("ConvexPolygonShape3D_v4rw7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1284011532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48176575, 0.0044784546)
+shape = SubResource("BoxShape3D_7cpgo")

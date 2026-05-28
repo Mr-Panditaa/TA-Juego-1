@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://0oq38qq480nl"
+path="res://.godot/imported/wall-corner-half-tower.obj-d5d571d3ede98f87fe039895acfcb4de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-corner-half-tower.obj-d5d571d3ede98f87fe039895acfcb4de.mesh"]
+
+source_file="res://assets/nivel 2/Models/OBJ format/wall-corner-half-tower.obj"
+dest_files=["res://.godot/imported/wall-corner-half-tower.obj-d5d571d3ede98f87fe039895acfcb4de.mesh", "res://.godot/imported/wall-corner-half-tower.obj-d5d571d3ede98f87fe039895acfcb4de.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

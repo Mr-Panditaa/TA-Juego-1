@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dq8nkwspvcb44"]
+
+[ext_resource type="Script" uid="uid://bwtow76rc2mj1" path="res://ProyectoFinal/scripts/pincho.gd" id="1_5r72r"]
+[ext_resource type="ArrayMesh" uid="uid://bsquhju6xauhu" path="res://assets/Models/OBJ format/spike-block.obj" id="1_i4ddc"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5r72r"]
+points = PackedVector3Array(-0.20308787, 0.70308787, 0.24382426, -0.013584583, 0.48650086, -0.4364154, -0.013584583, 0.51349914, -0.4364154, 0.43633255, 0.48650342, 0.013667426, -0.013584585, 0.06358458, 0.013584585, -0.4364154, 0.48650086, -0.013584583, 0.013584584, 0.9364154, -0.013584584, 0.013584583, 0.48650086, 0.4364154, 0.20314622, 0.74370754, 0.20314622, 0.2031197, 0.2562394, -0.2031197, 0.24376062, 0.70311964, -0.20311971, -0.23018536, 0.2968803, 0.21669495, -0.23018536, 0.71669495, -0.2031197, -0.20306136, 0.2562076, -0.20314622, 0.2031197, 0.2562394, 0.2031197, -0.20306134, 0.7437924, 0.2031462, 0.20311971, 0.2968803, -0.24376062, -0.4364154, 0.51349914, 0.013584583, 0.013584585, 0.06358458, -0.013584585, 0.43633252, 0.51366746, -0.013496582, -0.013584583, 0.51349914, 0.4364154, -0.013584584, 0.9364154, 0.013584584, 0.20311971, 0.70311964, -0.24376062, 0.24376062, 0.70311964, 0.20311971, -0.20308787, 0.70308787, -0.24382426, -0.20306136, 0.2562076, 0.20314622, -0.20306136, 0.29685378, -0.24379243, 0.24376062, 0.2968803, 0.20311971, 0.013584583, 0.51349914, -0.4364154, 0.09543383, 0.5953484, 0.35456616, -0.09543383, 0.40456617, 0.35456616, -0.09543383, 0.85456616, -0.09543383)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_byi5a"]
+radius = 0.46189398
+
+[node name="Area3D" type="Area3D" unique_id=492444904]
+script = ExtResource("1_5r72r")
+
+[node name="SpikeBlock" type="MeshInstance3D" parent="." unique_id=251864844]
+mesh = ExtResource("1_i4ddc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SpikeBlock" unique_id=404075576]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SpikeBlock/StaticBody3D" unique_id=1396765241]
+shape = SubResource("ConvexPolygonShape3D_5r72r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=204666462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0022732615, 0.47460347, -0.028421551)
+shape = SubResource("SphereShape3D_byi5a")

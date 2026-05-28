@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d0g4db1prv28t"
+path="res://.godot/imported/strut_horizontal.obj-0c684c12d952e0c2696a04a97c513358.mesh"
+
+[deps]
+
+files=["res://.godot/imported/strut_horizontal.obj-0c684c12d952e0c2696a04a97c513358.mesh"]
+
+source_file="res://assets/trampas/KayKit_Platformer_Pack_1.0_FREE/Assets/obj/neutral/strut_horizontal.obj"
+dest_files=["res://.godot/imported/strut_horizontal.obj-0c684c12d952e0c2696a04a97c513358.mesh", "res://.godot/imported/strut_horizontal.obj-0c684c12d952e0c2696a04a97c513358.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

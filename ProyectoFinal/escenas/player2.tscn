@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dx0g6teqnmwua"]
+
+[ext_resource type="Script" uid="uid://bl74d81typ7xs" path="res://ProyectoFinal/scripts/player_2.gd" id="1_5dnej"]
+[ext_resource type="ArrayMesh" uid="uid://bk6lro4fspicj" path="res://assets/Models/OBJ format/character-oobi.obj" id="1_mqif3"]
+[ext_resource type="Script" uid="uid://dcqnm5q8v66d4" path="res://ProyectoFinal/scripts/camera.gd" id="2_5dnej"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dnej"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ln1s3"]
+height = 1.1035156
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1945982703 groups=["player"]]
+script = ExtResource("1_5dnej")
+
+[node name="CharacterOobi" type="MeshInstance3D" parent="." unique_id=968000721]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
+mesh = ExtResource("1_mqif3")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dnej")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1089173159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4482422, 0)
+shape = SubResource("CapsuleShape3D_ln1s3")
+
+[node name="pivot" type="Node3D" parent="." unique_id=605097991]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.98606014, 0.16639014, 0, -0.16639015, 0.98606, 0.08614135, 2.5839038, 3.7120318)
+script = ExtResource("2_5dnej")
+
+[node name="Camera3D" type="Camera3D" parent="pivot" unique_id=243288814]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.99999994, 4.4703484e-08, 0, -5.9604645e-08, 1, -0.078762524, -0.53889143, -2.0409713)

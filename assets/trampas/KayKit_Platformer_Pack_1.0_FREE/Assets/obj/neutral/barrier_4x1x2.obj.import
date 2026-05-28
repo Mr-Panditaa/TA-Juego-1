@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfg68eu2kvbgo"
+path="res://.godot/imported/barrier_4x1x2.obj-196ae381919c9c0303b99b26e23aa51f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/barrier_4x1x2.obj-196ae381919c9c0303b99b26e23aa51f.mesh"]
+
+source_file="res://assets/trampas/KayKit_Platformer_Pack_1.0_FREE/Assets/obj/neutral/barrier_4x1x2.obj"
+dest_files=["res://.godot/imported/barrier_4x1x2.obj-196ae381919c9c0303b99b26e23aa51f.mesh", "res://.godot/imported/barrier_4x1x2.obj-196ae381919c9c0303b99b26e23aa51f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

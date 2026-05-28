@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cohm5uuth2xr5"]
+
+[ext_resource type="ArrayMesh" uid="uid://c76i17xvty080" path="res://assets/Models/OBJ format/spring.obj" id="1_bfgad"]
+[ext_resource type="Script" uid="uid://b71t1l6toprph" path="res://ProyectoFinal/scripts/trampolin.gd" id="1_i5vyw"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i5vyw"]
+points = PackedVector3Array(-0.03431987, 0.0029248684, 0.3208064, -0.022909548, 0.44992718, -0.3667682, 0.36678073, 0.4499346, 0.022834038, -0.31848717, 0.44825658, 0.19330645, -0.1606963, 0.0024996405, -0.28695285, 0.28695077, 0.0025462757, -0.16070409, 0.19333327, 0.44824424, 0.31847787, 0.28695077, 0.0025462757, 0.16070409, -0.32080993, 0.0029672543, -0.034306806, -0.30955753, 0.4614913, -0.18344283, 0.1834682, 0.46147805, -0.3095509, -0.034130014, 0.46009278, 0.35322645, 0.1606963, 0.0024996405, -0.28695285, -0.18497609, 0.0009227341, 0.26582387, 0.31848717, 0.44825658, -0.19330645, 0.1606963, 0.0024996405, 0.28695285, -0.36678073, 0.4499346, -0.022834038, -0.1933501, 0.44826305, 0.31843433, 0.30958468, 0.4615114, 0.18338709, -0.28696752, 0.0025328738, 0.16064157, -0.1933501, 0.44826305, -0.31843433, -0.28696752, 0.0025328738, -0.16064157, 0.32080993, 0.0029672543, -0.034306806, 0.03431987, 0.0029248684, -0.3208064, 0.022909222, 0.44992405, 0.36676297, 0.19333327, 0.44824424, -0.31847787, -0.31848717, 0.44825658, -0.19330645, 0.31848717, 0.44825658, 0.19330645, -0.30955753, 0.4614913, 0.18344283, -0.36678073, 0.4499346, 0.022834038, 0.36678073, 0.4499346, -0.022834038, 0.022909222, 0.44992405, -0.36676297)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ovtwc"]
+height = 0.491333
+radius = 0.39794922
+
+[node name="Area3D" type="Area3D" unique_id=541411407]
+script = ExtResource("1_i5vyw")
+
+[node name="Spring" type="MeshInstance3D" parent="." unique_id=1733602347]
+mesh = ExtResource("1_bfgad")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Spring" unique_id=1367945149]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spring/StaticBody3D" unique_id=931910946]
+shape = SubResource("ConvexPolygonShape3D_i5vyw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=379653139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26385498, 0)
+shape = SubResource("CylinderShape3D_ovtwc")

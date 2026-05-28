@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dp6qf8e1sxny"]
+
+[ext_resource type="Script" uid="uid://bfh0o754yvoc3" path="res://ProyectoFinal/scripts/piso.gd" id="1_46myb"]
+[ext_resource type="ArrayMesh" uid="uid://0ct0jrvt020j" path="res://assets/Models/OBJ format/conveyor-belt.obj" id="1_nue4x"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_46myb"]
+points = PackedVector3Array(0.49135885, 0.18224306, 0.49135885, -0.4921815, 0.12082651, -0.4921815, -0.49134964, 0.1822775, -0.49134964, -0.4921815, 0.12082651, 0.4921815, 0.3591678, 0.002456977, -0.47901547, 0.35228512, 0.29938757, -0.46983612, -0.35228512, 0.29938757, 0.46983612, -0.3591678, 0.002456977, 0.47901547, 0.3591678, 0.002456977, 0.47901547, -0.3591678, 0.002456977, -0.47901547, 0.35228512, 0.29938757, 0.46983612, -0.12829782, 0.3384965, -0.12820855, 0.4921815, 0.12082651, -0.4921815, -0.40160003, 0.28617117, -0.47606707, -0.47651386, 0.22838613, 0.4919226, 0.47651386, 0.22838613, -0.4919226, 0.46664163, 0.06174164, 0.48173112, 0.13976459, 0.33535764, 0.027935404, -0.43654814, 0.031648144, 0.4817213, -0.071269214, 0.33854803, 0.18531781, 0.41749138, 0.018087689, -0.47718638, 0.40160003, 0.28617117, 0.47606707, -0.46664163, 0.06174164, -0.48173112, -0.35228512, 0.29938757, -0.46983612, -0.44578266, 0.25911734, -0.4919114, 0.47651386, 0.22838613, 0.4919226, -0.44578266, 0.25911734, 0.4919114, 0.49217248, 0.12079287, 0.49217248, -0.071269214, 0.33854803, -0.18531781, -0.41749138, 0.018087689, -0.47718638, 0.40160003, 0.28617117, -0.47606707, 0.46664163, 0.06174164, -0.48173112)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v4wmq"]
+size = Vector3(1, 0.32299805, 1)
+
+[node name="Area3D" type="Area3D" unique_id=842887297]
+script = ExtResource("1_46myb")
+
+[node name="ConveyorBelt" type="MeshInstance3D" parent="." unique_id=1987367344]
+mesh = ExtResource("1_nue4x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ConveyorBelt" unique_id=424961597]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ConveyorBelt/StaticBody3D" unique_id=1663506095]
+shape = SubResource("ConvexPolygonShape3D_46myb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1633411728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18347168, 0)
+shape = SubResource("BoxShape3D_v4wmq")

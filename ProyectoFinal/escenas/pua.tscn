@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b6dnbejacplmt"]
+
+[ext_resource type="Script" uid="uid://4e6gtap2uc4k" path="res://ProyectoFinal/scripts/pua.gd" id="1_657q2"]
+[ext_resource type="ArrayMesh" uid="uid://duvnal8noooqc" path="res://assets/Models/OBJ format/trap-spikes-large.obj" id="1_kxy08"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_657q2"]
+points = PackedVector3Array(0.22016376, 0.255, 0.22012064, -0.3708365, 0, -0.3708365, -0.3708365, 0, 0.3708365, 0.3708365, 0, -0.3708365, -0.22016376, 0.255, -0.22012064, 0.3708365, 0, 0.3708365, 0.37640005, 0.091099955, -0.37632635, -0.37632397, 0.091099955, 0.37632635, -0.22016376, 0.255, 0.22012064, 0.22016376, 0.255, -0.22012064, 0.37640005, 0.091099955, 0.37632635, -0.37632397, 0.091099955, -0.37632635, -0.3749101, 0.033777073, 0.3749101, 0.3749101, 0.033777073, -0.3749101, -0.3749101, 0.033777073, -0.3749101, 0.3749101, 0.033777073, 0.3749101)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vtsg3"]
+size = Vector3(0.7928467, 0.3252411, 0.80322266)
+
+[node name="Area3D" type="Area3D" unique_id=809777778]
+script = ExtResource("1_657q2")
+
+[node name="TrapSpikesLarge" type="MeshInstance3D" parent="." unique_id=814620857]
+mesh = ExtResource("1_kxy08")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TrapSpikesLarge" unique_id=1184395162]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrapSpikesLarge/StaticBody3D" unique_id=34111638]
+shape = SubResource("ConvexPolygonShape3D_657q2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=524846543]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0038452148, 0.13018036, 0.0026855469)
+shape = SubResource("BoxShape3D_vtsg3")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bd67vcgdh6so5"]
+
+[ext_resource type="ArrayMesh" uid="uid://0vrbri67tdlj" path="res://assets/Models/OBJ format/button-square.obj" id="1_4fsds"]
+[ext_resource type="Script" uid="uid://cl6mpm4oaggfa" path="res://ProyectoFinal/scripts/checkpoint.gd" id="2_tc8yr"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tc8yr"]
+points = PackedVector3Array(-0.29085234, 1.3877788e-17, -0.23634939, 0.28080678, 0.06489975, 0.2281937, 0.23634112, -2.7755576e-17, -0.29090908, -0.15177289, 0.1982271, -0.15177053, -0.23635045, 0, 0.29090908, 0.151765, 0.19822802, 0.15177196, 0.151765, 0.19822802, -0.15177196, -0.19642267, 0.15357731, 0.196421, 0.23634112, 0, 0.29090908, -0.22816102, 0.06490496, -0.280829, 0.2571417, 0.109516345, -0.19999252, -0.28081012, 0.064900495, 0.22818886, 0.22815655, 0.06490421, 0.280835, 0.29084304, 0, -0.23634939, -0.15177289, 0.1982271, 0.15177053, 0.22815655, 0.06490421, -0.280835, -0.28081012, 0.064900495, -0.22818886, -0.22816102, 0.06490496, 0.280829, -0.23635045, 0, -0.29090908, -0.29085234, 0, 0.23634939, 0.29084304, 1.3877788e-17, 0.23634939, 0.2571417, 0.109516345, 0.19999252, 0.28080678, 0.06489975, -0.2281937, -0.19642267, 0.15357731, -0.196421, 0.19641466, 0.15357767, 0.19642231, 0.19641466, 0.15357767, -0.19642231)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u28wq"]
+size = Vector3(0.6390991, 0.24261475, 0.6080322)
+
+[node name="Area3D" type="Area3D" unique_id=492136265]
+script = ExtResource("2_tc8yr")
+
+[node name="Checkpoint" type="MeshInstance3D" parent="." unique_id=1367013557]
+mesh = ExtResource("1_4fsds")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Checkpoint" unique_id=445212511]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoint/StaticBody3D" unique_id=1358005694]
+shape = SubResource("ConvexPolygonShape3D_tc8yr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=979182846]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004547119, 0.10244751, -0.014465332)
+shape = SubResource("BoxShape3D_u28wq")

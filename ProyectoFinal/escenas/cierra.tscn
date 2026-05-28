@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bu4ehkffosqsr"]
+
+[ext_resource type="Script" uid="uid://bkpvg3hu62lib" path="res://ProyectoFinal/scripts/cierra.gd" id="1_5c3qr"]
+[ext_resource type="ArrayMesh" uid="uid://k03544oxcj4f" path="res://assets/Models/OBJ format/saw.obj" id="2_smtin"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3cph1"]
+points = PackedVector3Array(-0.04479827, -0.31379834, -0.039722588, 0.16540666, 0.37819937, 0.005400116, 0.16422492, 0.37549734, -0.00635795, -0.37819937, 0.16540667, 0.0054001156, 0.04866583, -0.04866586, 0.15169999, 0.37819937, -0.16540669, 0.0054001166, 0.048346084, 0.048346113, -0.15169999, -0.37819734, -0.1654058, 0.005400084, 0.16540578, -0.37819734, 0.0054000844, 0.37819734, 0.16540581, 0.005400085, -0.16540582, 0.37819734, 0.0054000844, -0.04866589, 0.04866586, 0.15169999, -0.1654067, -0.37819937, 0.005400116, -0.048346143, -0.048346113, -0.15169999, 0.15145722, -0.15153028, -0.0995709, -0.15145727, 0.15153027, -0.09957089, 0.15189555, 0.15196882, 0.098857634, -0.1518956, -0.15196879, 0.09885762, -0.20953202, 0.011600135, -0.09947618, 0.2095302, -0.011600037, -0.099475354, -0.011597349, 0.20955409, -0.09945216, 0.21013898, 0.011633741, 0.09876293, -0.21013662, -0.011633607, 0.09876179, 0.011630886, 0.21016115, 0.09873883, -0.011630812, -0.21015874, 0.09873769, -0.15145727, -0.15153027, -0.09957089, 0.15145722, 0.15153028, -0.0995709, 0.011597291, -0.2095541, -0.09945217, 0.15189555, -0.15196882, 0.098857634, -0.1518956, 0.15196879, 0.09885762, -0.37549537, -0.16422407, -0.006357919, 0.37549537, 0.16422409, -0.00635792)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a6nii"]
+size = Vector3(0.8280029, 0.8413391, 0.23252869)
+
+[node name="Area3D" type="Area3D" unique_id=1187569875]
+script = ExtResource("1_5c3qr")
+
+[node name="Saw" type="MeshInstance3D" parent="." unique_id=396506221]
+mesh = ExtResource("2_smtin")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Saw" unique_id=1435862201]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Saw/StaticBody3D" unique_id=893272901]
+shape = SubResource("ConvexPolygonShape3D_3cph1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1459435316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002746582, 0.005783081, 0.019493103)
+shape = SubResource("BoxShape3D_a6nii")
